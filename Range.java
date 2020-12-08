@@ -8,12 +8,12 @@ public class Range implements IntegerSequence{
 *@param end : the ending value which is also inclusive.*/
   public Range(int start,  int end){
   if (start>end){
-    {throw new IllegalArgumentException("start is greater than end");
+    throw new IllegalArgumentException("start is greater than end");
   }
   this.start = start;
   this.end = end;
   current = start;
-  }
+
 }
 
   public void reset(){
@@ -34,7 +34,7 @@ public class Range implements IntegerSequence{
   //This will return the current value, it will also increase current value by 1.
   //e.g.  if current is 5. This will make current 6, and return 5.
   public int next(){
-  if (hasNext()==false;){
+  if (hasNext()==false){
     throw new  NoSuchElementException("error");
   }
   current++;
@@ -42,13 +42,3 @@ public class Range implements IntegerSequence{
    }
 
 }
-
-
-    IntegerSequence r = new Range(10,15);
-    while(r.hasNext()){
-      System.out.print(r.next())
-      if( r.hasNext() ){
-         System.out.print( ", " );
-      }
-    }
-    System.out.println();
