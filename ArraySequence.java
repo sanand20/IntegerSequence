@@ -10,8 +10,22 @@ public class ArraySequence implements IntegerSequence{
     data[i]=other[i];
   }
   currentIndex=0;}
+
+ public ArraySequence(IntegerSequence otherseq){
+data = new int[otherseq.length()];
+otherseq.reset();
+int i = 0;
+while(otherseq.hasNext()){
+data[i] = otherseq.next();
+i++;
+}
+otherseq.reset();
+reset();
+}
+
   public void reset(){
   currentIndex = 0; }
+
   public boolean hasNext(){
     if (currentIndex<data.length){
       return true;
@@ -25,4 +39,8 @@ public class ArraySequence implements IntegerSequence{
     currentIndex++;
     return data[currentIndex - 1];
  }
+ public int length(){
+   return data.length;
+ }
+
 }
